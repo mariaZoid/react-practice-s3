@@ -21,7 +21,7 @@ jobs:
       - name: Run Shell Script
         run: |
           chmod +x changePrice.sh
-          ../changePrice.sh
+          ./changePrice.sh
       - name: Building project
         run: npm run build
       - name: Configure AWS Credentials
