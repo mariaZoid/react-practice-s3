@@ -6,7 +6,7 @@ on:
       - staging # Replace with your main branch name
 
 jobs:
-  # To build the project
+
   deploy:
     runs-on: ubuntu-latest
     steps:
@@ -22,6 +22,8 @@ jobs:
         run: |
           chmod +x changePrice.sh
           ./changePrice.sh
+        with: 
+          environment: ${{ secrets.ENVIRONMENT }}
       - name: Building project
         run: npm run build
       - name: Configure AWS Credentials
